@@ -49,7 +49,9 @@ const PlanForm = () => {
           >
             <option value="">Select an option</option>
             {maids.map((maid) => (
-              <option value={maid.name}>{maid.name}</option>
+              <option key={maid.id} value={maid.name}>
+                {maid.name}
+              </option>
             ))}
           </select>
         </div>
@@ -63,7 +65,9 @@ const PlanForm = () => {
           >
             <option value="">Select an option</option>
             {chores.map((chore) => (
-              <option value={chore.type}>{chore.type}</option>
+              <option key={chore.id} value={chore.type}>
+                {chore.type}
+              </option>
             ))}
           </select>
         </div>
