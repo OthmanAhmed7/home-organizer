@@ -1,5 +1,7 @@
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/sections/Header";
+import { FormProvider } from "@/context/FormContext";
 
 const poppins = Poppins({
   weight: ["300", "400", "600", "700", "800"],
@@ -13,7 +15,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <FormProvider>
+          <Header />
+          {children}
+        </FormProvider>
+      </body>
     </html>
   );
 }
